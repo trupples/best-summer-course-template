@@ -1,0 +1,61 @@
+---
+export interface Props {
+	img: string;
+	name: string;
+	role: string;
+	email: string;
+	tel: string;
+};
+
+const { img, name, role, email, tel } = Astro.props;
+---
+
+<div class='Contact'>
+	<img src={img} width='100' />
+	<span class='name'>{name}</span>
+	<span class='role'>{role}</span>
+	<span class='email'><a href={'mailto:' + email}>{email}</a></span>
+	<span class='tel'><a href={(tel && tel.match(/\d/g)) ? ('https://api.whatsapp.com/send?phone=' + tel.match(/\d/g).join('')) : '#'}>{tel}</a></span>
+</div>
+
+<style>
+.Contact {
+	display: grid;
+	grid-template-areas:
+		"img name"
+		"img role"
+		"img email"
+		"img tel";
+
+	grid-template-columns: auto 1fr;
+
+	column-gap: 1em;
+
+	margin-bottom: 1em;
+}
+
+img {
+	grid-area: img;
+	height: 100%;
+	object-fit: contain;
+}
+
+.name {
+	grid-area: name;
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+
+.role {
+	grid-area: role;
+	font-size: 1.1rem;
+}
+
+.email {
+	grid-area: email;
+}
+
+.tel {
+	grid-area: tel;
+}
+</style>

@@ -1,0 +1,119 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+import Contact from '../components/Contact.astro';
+
+import BESTCj_logo from '../../lib/BESTCJ_signature.png';
+import BC_logo from '../../lib/BEST Courses Logo.png';
+import TUCN_logo from '../../lib/utcn.jpg';
+
+import cover from '../../lib/cover1.JPG';
+
+import photo_samuel_gherasim from '../../lib/people/Samuel Gherasim.png';
+import photo_valentin_runcan from '../../lib/people/Valentin Runcan.png';
+---
+
+<Layout title="">
+	<header>
+		<div id="logos">
+			<a href="https://bestcj.ro"><img src={BESTCj_logo} /></a>
+			<a href="https://best.eu.org/courses/welcome.jsp"><img src={BC_logo} /></a>
+			<a href="https://utcluj.ro"><img src={TUCN_logo} /></a>
+		</div>
+		<div id="cover" role="heading">
+			BEST Course in Summer
+		</div>
+	</header>
+	<section>
+		<h1>Rovering through Space: Autonomous driving explained</h1>
+		<p>
+			Hello, dear future passengers of the RTS22 intergalactic flight! We hope that you’re ready to embark on one of the trips of your lifetime! But first, let us ask you a few questions.<br/><br/>
+			Have you ever thought about autonomous driving vehicles and how they work?<br/><br/>
+			Are you fascinated by the infinity of the universe and the possibility of exploring even a fraction of it?<br/><br/>
+			If the answer to those questions is “yes”, then you’ll definitely be ready to join our adventure: Rovering Through Space.<br/><br/>
+			During this trip you’ll get an insight into how an autonomous driving vehicle works and use this knowledge to design your own space exploring rover that will be able to withstand the harsh conditions of an yet unexplored planet.<br/><br/>
+			The rocket launch site is located in the Heart of Transylvania, Cluj-Napoca, to be precise. This is the place where no garlic grows, all the vampires are still alive and where the Electric Castle festival takes place.<br/><br/>
+			Don’t hesitate to book your seat on the RTS22 space shuttle by sending us your motivational letter!
+		</p>
+	</section>
+	<section>
+		<h2>Useful info</h2>
+		<b>Organizing LBG:</b> <a href="https://bestcj.ro">BEST Cluj-Napoca</a><br/>
+		<b>Location:</b> Cluj-Napoca<br/>
+		<b>Date:</b> X-Y July 2023<br/>
+		<b>Accommodation:</b> Technical University of Cluj-Napoca student dorms<br/>
+		<b>Transport:</b> Public transit (free tickets) & organizer cars<br/>
+		<b>Fee:</b> &euro;50, check for concessions with your LBG<br/>
+		<b>ECTS Credits:</b> 1 credit<br/>
+		<hr/>
+		<Button href='#'>Survival Guide</Button>
+		<Button href='#'>Apply here (DL: X March 2023)</Button>
+	</section>
+	<section>
+		<h2>Syllabus & Pre-materials</h2>
+		Will be posted here a few weeks before the event. Make sure to study the pre-materials and install any relevant software!
+	</section>
+	<section>
+		<h2>Schedule</h2>
+		Will be posted here a few weeks before the event.
+	</section>
+	<section>
+		<h2>Organizer's Contacts</h2>
+
+		<Contact img={photo_samuel_gherasim} name='Samuel Gherasim' role='President of BEST Cluj-Napoca' email='teodor-samuel.gherasim@BEST-eu.org' tel='+40 753 330 512' />
+		<Contact img={photo_valentin_runcan} name='Valentin Runcan' role='Main Organizer of the course' email='care-e-mailu-tau@best-eu.org' tel='+40 725 561 234' />
+	</section>
+	<footer>
+		Don't wait, apply!
+	</footer>
+</Layout>
+
+<style>
+	#cover {
+		/* cover aesthetic */
+		width: 100%;
+		min-height: 10rem;
+		box-sizing: border-box;
+		padding: 20px;
+		background-image: url('../../lib/cover1.JPG');
+		background-position: center;
+		background-size: cover;
+
+		/* big white text */
+		font-size: 2rem;
+		font-weight: bold;
+		color: white;
+		text-align: center;
+
+		/* center text */
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	#logos {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 20px;
+	}
+
+	#logos > a {
+		display: inline-block;
+		max-width: 30%;
+	}
+
+	#logos > a > img {
+		max-width: 100%;
+		max-height: 100px;
+		object-fit: contain;
+		object-position: center center;
+	}
+
+	@media screen and (min-width: 1000px) {
+		#cover {
+			min-height: 15rem;
+			font-size: 3rem;
+		}
+	}
+</style>
